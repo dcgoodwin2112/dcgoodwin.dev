@@ -1,8 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Dan Goodwin`,
+    description: `Dan Goodwin - Web Application Developer. Drupal, PHP, JavaScript, React, Gatsby`,
+    author: `@dcgoodwin2112`,
+    headerTagLine: `Web Application Developer`,
+    headerIcon: `src/images/dan-goodwin-headshot.png`,
+    socialLinks: {
+      twitter: `https://twitter.com/dcgoodwin2112`,
+      linkedin: `https://www.linkedin.com/in/dcgoodwin2112/`,
+      github: `https://github.com/dcgoodwin2112`,
+      drupal: `https://www.drupal.org/u/dcgoodwin`,
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

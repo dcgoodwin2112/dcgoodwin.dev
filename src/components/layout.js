@@ -7,6 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+//import Image from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
@@ -18,6 +19,23 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          headerTagLine
+          socialLinks {
+            twitter
+            linkedin
+            github
+            drupal
+          }
+          headerIcon
+        }
+      }
+      headerIcon: file(
+        relativePath: { eq: "dan-goodwin-headshot.png" }
+      ) {
+        childImageSharp {
+          fixed(width: 84) {
+            ...GatsbyImageSharpFixed
+          }
         }
       }
     }
@@ -25,7 +43,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header
+        headerIcon={data.headerIcon}
+        siteTitle={data.site.siteMetadata.title}
+        headerTagLine={data.site.siteMetadata.headerTagLine}
+        socialLinks={data.site.siteMetadata.socialLinks}
+      />
       <div
         style={{
           margin: `0 auto`,
