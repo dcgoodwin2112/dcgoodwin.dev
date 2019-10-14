@@ -14,7 +14,12 @@
 }
 
 .site-footer a {
-  color: var(--main-footer-color);
+  color: var(--theme-white);
+}
+
+.site-footer a:hover {
+  color: var(--theme-light-blue);
+  text-decoration: none;
 }
 
 .footer-flex-container {
@@ -32,7 +37,7 @@
 }
 
 .footer-social-links li {
-  border-right: 1px solid var(--main-header-color);
+  border-right: 1px solid var(--theme-white-trans);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   list-style-type: none;

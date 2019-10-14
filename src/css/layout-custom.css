@@ -1,5 +1,26 @@
 /** Custom Layout and page style attributes */
 
+h1 {
+  font-size: 2rem;
+}
+
+.post-excerpt h2 > a {
+  text-decoration: none;
+}
+
+.post-excerpt h2 > a:hover {
+  text-decoration: underline;
+}
+
+.post-excerpt h2 {
+  margin-bottom: 0.5rem;
+}
+
+.post-excerpt .post-date {
+  margin-bottom: 0.5rem;
+  font-size: 80%;
+}
+
 .layout-container {
   display: flex;
   flex-direction: column;

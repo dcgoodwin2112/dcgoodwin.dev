@@ -42,14 +42,16 @@ const IndexPage = ({
   )
 }
 const Post = ({ edge: { node } }) => (
-  <article>
+  <article className="post-excerpt">
     <header>
       <h2>
         <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
       </h2>
-      <small>{node.date}</small>
+      <div className="post-date">{node.frontmatter.date}</div>
     </header>
-    <p>{node.excerpt}</p>
+    <p>
+      {node.excerpt} [<Link to={node.frontmatter.path}>Read More</Link>]
+    </p>
   </article>
 )
 
