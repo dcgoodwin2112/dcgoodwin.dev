@@ -41,6 +41,10 @@ main a, main a:visited {
   color: var(--theme-blue);
 }
 
+main a:hover {
+  color: var(--theme-dark-grey);
+}
+
 @media only screen and (max-width: 900px) {
   main {
     margin: 1.5rem 2rem;
