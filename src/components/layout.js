@@ -7,11 +7,15 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-//import Image from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
+import Footer from "./footer"
+import "../css/colors.css"
+import "../css/layout.css"
+import "../css/layout-custom.css"
+import "../css/header.css"
+import "../css/footer.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,14 +30,27 @@ const Layout = ({ children }) => {
             github
             drupal
           }
-          headerIcon
         }
       }
-      headerIcon: file(
-        relativePath: { eq: "dan-goodwin-headshot.png" }
-      ) {
+      headerIcon: file(relativePath: { eq: "dan-goodwin-headshot.png" }) {
         childImageSharp {
           fixed(width: 84) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      certifiedDevBadge: file(
+        relativePath: { eq: "drupal-8-certified-developer.png" }
+      ) {
+        childImageSharp {
+          fixed(height: 84) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      drupalAssocBadge: file(relativePath: { eq: "assoc_badge_ind_400.png" }) {
+        childImageSharp {
+          fixed(height: 84) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -42,29 +59,19 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div className="layout-container">
       <Header
         headerIcon={data.headerIcon}
         siteTitle={data.site.siteMetadata.title}
         headerTagLine={data.site.siteMetadata.headerTagLine}
-        socialLinks={data.site.siteMetadata.socialLinks}
       />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+      <main>{children}</main>
+      <Footer
+        socialLinks={data.site.siteMetadata.socialLinks}
+        certifiedDevBadge={data.certifiedDevBadge}
+        drupalAssocBadge={data.drupalAssocBadge}
+      />
+    </div>
   )
 }
 

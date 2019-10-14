@@ -1,0 +1,85 @@
+/** Custom header attributes */
+
+.site-header {
+  background-color: var(--main-header-bg);
+  box-shadow: 0 4px 4px var(--main-header-shadow);
+  color: var(--main-header-color);
+  min-height: 95px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-header > div {
+  vertical-align: middle;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.author-icon {
+  flex-basis: 95px;
+  flex-shrink: 0;
+}
+
+.author-info {
+  flex-basis: 230px;
+  flex-shrink: 0;
+}
+
+.navigation-container {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.navigation-container li {
+  border-right: 1px solid var(--main-header-color);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  list-style-type: none;
+  display: inline;
+}
+
+.navigation-container li:last-child {
+  border-right: none;
+  padding-right: none;
+}
+
+.site-header a {
+  color: var(--main-header-color);
+}
+
+.site-header img,
+.site-header p,
+.site-header ul {
+  margin: 0;
+}
+
+.site-header img {
+  margin-top: 0.35rem;
+}
+
+.author-name {
+  margin-bottom: 0.1rem;
+  font-size: 1.8rem;
+}
+
+.author-name a {
+  text-decoration: none;
+}
+
+.navigation-container a {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 775px) {
+  header.site-header > div.navigation-container {
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}

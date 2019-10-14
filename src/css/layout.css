@@ -624,85 +624,11 @@ pre tt:after {
 /* Begin custom styles. */
 
 :root {
-  --main-header-bg: #01094D;
+  /* --main-header-bg: #01094d; */
+  /* --main-header-bg: rgb(30, 32, 45, 1); */
+  --main-header-bg: #0678be;
   --main-header-shadow: rgba(0, 0, 0, 0.25);
   --main-header-color: #fefefe;
-}
-
-/** Header Styles */
-
-header {
-  background-color: var(--main-header-bg);
-  box-shadow: 0px 4px 4px var(--main-header-shadow);
-  color: var(--main-header-color);
-  min-height: 95px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
- }
-
-header > div {
-  vertical-align: middle;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-header > div.author-icon {
-  flex-basis: 100px;
-  flex-shrink: 0;
-}
-
-header > div.author-info {
-  flex-basis: 230px;
-  flex-shrink: 0;
-}
-
-header > div.social-links {
-  flex-grow: 1;
-  text-align: right;
-}
-
-div.social-links li {
-  border-right: 1px solid var(--main-header-color);
-  padding-left: .5rem;
-  padding-right: .5rem;
-  list-style-type: none;
-  display: inline;
-}
-
-div.social-links li:last-child {
-  border-right: none;
-  padding-right: none;
-}
-
- header a {
-    color: var(--main-header-color);
- }
-
- header img, header p, header ul {
-   margin-bottom: 0;
- }
-
- header img {
-   margin-top: 0.35rem;
- }
-
- .author-name {
-   margin-bottom: 0.1rem;
-   font-size: 1.8rem;
- }
-
-.author-name a {
-   text-decoration: none;
-}
-
-@media only screen and (max-width: 775px) {
- header > div.social-links {
-    text-align: center;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
+  --main-footer-bg: #1e202d;
+  --main-footer-color: #fefefe;
 }

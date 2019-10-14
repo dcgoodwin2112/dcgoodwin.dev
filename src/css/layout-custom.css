@@ -1,0 +1,28 @@
+/** Custom Layout and page style attributes */
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+.layout-container > .site-footer {
+  flex-grow: 1;
+}
+
+main {
+  margin: 1.5rem auto;
+  max-width: 776px;
+}
+
+main a, main a:visited {
+  color: var(--theme-blue);
+}
+
+@media only screen and (max-width: 900px) {
+  main {
+    margin: 1.5rem 2rem;
+  }
+}
+
