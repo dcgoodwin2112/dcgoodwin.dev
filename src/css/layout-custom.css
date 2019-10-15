@@ -45,6 +45,30 @@ main a:hover {
   color: var(--theme-dark-grey);
 }
 
+.post-summary-flex-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2.2rem;
+}
+
+.featured-image {
+  flex-basis: 33%;
+  margin-right: 2rem;
+}
+
+.post-excerpt {
+  flex-basis: 67%;
+}
+
+.flex-basis-full-width {
+  flex-basis: 100%
+}
+
+.featured-image {
+  max-width: 250px;
+}
+
+
 @media only screen and (max-width: 900px) {
   main {
     margin: 1.5rem 2rem;

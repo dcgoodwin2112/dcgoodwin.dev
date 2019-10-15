@@ -1,0 +1,47 @@
+form {
+  display: block;
+  margin: 0 auto;
+  max-width: 450px;
+  min-width: 275px;
+}
+
+label {
+  font-weight: 600;
+  font-family: BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+input,
+textarea {
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+input[type="text"],
+textarea {
+  border: 1px solid var(--theme-dark-grey);
+  border-radius: 2px;
+}
+
+textarea {
+  height: 125px;
+}
+
+input[type="submit"] {
+  background-color: var(--theme-blue);
+  transition: background-color 0.5s;
+  color: var(--theme-white);
+  font-weight: 600;
+  height: 40px;
+  border-radius: 2px;
+  border: none;
+  font-family: BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: var(--theme-dark-grey);
+  transition: background-color 0.5s;
+}

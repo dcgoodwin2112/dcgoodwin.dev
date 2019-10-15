@@ -2,6 +2,7 @@
 path: "/posts/new-gatsby-website"
 date: "2019-10-10"
 title: "New Gatsby Website"
+featuredImage: "../images/post-images/gatsby-vscode-screenshot.png"
 ---
 
 ## New Web Site

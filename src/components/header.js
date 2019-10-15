@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 
 const Header = ({ headerIcon, siteTitle, headerTagLine }) => (
   <header className="site-header">
-    {console.log(headerIcon)}
     <div className="author-icon">
       <Img
         fixed={headerIcon.childImageSharp.fixed}
@@ -22,7 +21,7 @@ const Header = ({ headerIcon, siteTitle, headerTagLine }) => (
       <nav>
         <ul className="navigation">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Blog</Link>
           </li>
           <li>
             <Link to="/">About</Link>

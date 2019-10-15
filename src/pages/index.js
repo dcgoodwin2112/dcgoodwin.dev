@@ -1,14 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
-// import Image from "../components/image"
 import SEO from "../components/seo"
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/posts/" } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           id
@@ -17,6 +20,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
@@ -42,16 +52,30 @@ const IndexPage = ({
   )
 }
 const Post = ({ edge: { node } }) => (
-  <article className="post-excerpt">
+  <article className="post-summary">
     <header>
       <h2>
         <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
       </h2>
-      <div className="post-date">{node.frontmatter.date}</div>
     </header>
-    <p>
-      {node.excerpt} [<Link to={node.frontmatter.path}>Read More</Link>]
-    </p>
+    <div className="post-summary-flex-container">
+      {node.frontmatter.featuredImage && (
+        <div className="featured-image">
+          <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
+        </div>
+      )}
+      <div
+        className={
+          "post-excerpt" +
+          (node.frontmatter.featuredImage ? "" : " flex-basis-full-width")
+        }
+      >
+        <div className="post-date">{node.frontmatter.date}</div>
+        <p>
+          {node.excerpt} [<Link to={node.frontmatter.path}>Read More</Link>]
+        </p>
+      </div>
+    </div>
   </article>
 )
 
