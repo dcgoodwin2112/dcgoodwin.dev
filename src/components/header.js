@@ -24,7 +24,7 @@ const Header = ({ headerIcon, siteTitle, headerTagLine }) => (
             <Link to="/">Blog</Link>
           </li>
           <li>
-            <Link to="/">About</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>
@@ -36,12 +36,14 @@ const Header = ({ headerIcon, siteTitle, headerTagLine }) => (
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  headerIcon: PropTypes.shape({
+    childImageSharp: PropTypes.object,
+  }),
+  siteTitle: PropTypes.string.isRequired,
   headerTagLine: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
   headerTagLine: ``,
 }
 
