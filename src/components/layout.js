@@ -58,18 +58,20 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const { headerIcon, certifiedDevBadge, drupalAssocBadge, site } = data
+  const { siteMetadata } = site
   return (
     <div className="layout-container">
       <Header
-        headerIcon={data.headerIcon}
-        siteTitle={data.site.siteMetadata.title}
-        headerTagLine={data.site.siteMetadata.headerTagLine}
+        headerIcon={headerIcon}
+        siteTitle={siteMetadata.title}
+        headerTagLine={siteMetadata.headerTagLine}
       />
       <main>{children}</main>
       <Footer
-        socialLinks={data.site.siteMetadata.socialLinks}
-        certifiedDevBadge={data.certifiedDevBadge}
-        drupalAssocBadge={data.drupalAssocBadge}
+        socialLinks={siteMetadata.socialLinks}
+        certifiedDevBadge={certifiedDevBadge}
+        drupalAssocBadge={drupalAssocBadge}
       />
     </div>
   )
