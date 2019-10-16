@@ -2,4 +2,4 @@
 title: "About"
 ---
 
-## This is the about page
+Greetings! Here's some text about me.
