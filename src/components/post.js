@@ -1,11 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
+import PropTypes from "prop-types"
 import Layout from "./layout"
 
-export default function Post({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
+const Post = ({ data }) => {
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
@@ -35,3 +34,18 @@ export const pageQuery = graphql`
     }
   }
 `
+
+Post.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        date: PropTypes.string,
+        title: PropTypes.string,
+        path: PropTypes.string.isRequired,
+      }),
+      html: PropTypes.string,
+    })
+  })
+}
+
+export default Post
