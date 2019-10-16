@@ -3,7 +3,6 @@ import Img from "gatsby-image"
 import PropTypes from "prop-types"
 
 const Footer = ({ socialLinks, certifiedDevBadge, drupalAssocBadge }) => {
-  console.log(certifiedDevBadge)
   return (
     <footer className="site-footer">
       <div className="footer-flex-container">
