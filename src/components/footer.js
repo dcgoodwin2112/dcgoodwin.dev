@@ -1,7 +1,9 @@
 import React from "react"
 import Img from "gatsby-image"
+import PropTypes from "prop-types"
 
 const Footer = ({ socialLinks, certifiedDevBadge, drupalAssocBadge }) => {
+  console.log(certifiedDevBadge)
   return (
     <footer className="site-footer">
       <div className="footer-flex-container">
@@ -49,6 +51,26 @@ const SocialLink = ({ href, linkText }) => {
       </li>
     </>
   )
+}
+
+Footer.propTypes = {
+  socialLinks: PropTypes.shape({
+    twitter: PropTypes.string,
+    linkedin: PropTypes.string,
+    github: PropTypes.string,
+    drupal: PropTypes.string,
+  }),
+  certifiedDevBadge: PropTypes.shape({
+    childImageSharp: PropTypes.object,
+  }),
+  drupalAssocBadge: PropTypes.shape({
+    childImageSharp: PropTypes.object,
+  }),
+}
+
+SocialLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  linkText: PropTypes.string.isRequired,
 }
 
 export default Footer
