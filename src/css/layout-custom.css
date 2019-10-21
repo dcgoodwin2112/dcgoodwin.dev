@@ -16,11 +16,6 @@ h1 {
   margin-bottom: 0.5rem;
 }
 
-.post-excerpt .post-date {
-  margin-bottom: 0.5rem;
-  font-size: 80%;
-}
-
 .layout-container {
   display: flex;
   flex-direction: column;
@@ -52,12 +47,12 @@ main a:hover {
 }
 
 .featured-image {
-  flex-basis: 33%;
+  flex-basis: 25%;
   margin-right: 2rem;
 }
 
 .post-excerpt {
-  flex-basis: 67%;
+  flex-basis: 75%;
 }
 
 .flex-basis-full-width {
@@ -68,10 +63,22 @@ main a:hover {
   max-width: 250px;
 }
 
+.post-date {
+  margin-bottom: 1.45rem;
+}
 
 @media only screen and (max-width: 900px) {
   main {
     margin: 1.5rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .featured-image {
+    display: none;
+  }
+  .post-excerpt {
+    flex-basis: 100%;
   }
 }
 
