@@ -4,8 +4,6 @@ date: '2019-10-10'
 title: New Gatsby Website
 featuredImage: ../images/posts/gatsby-vscode-screenshot-front.png
 ---
-    <p>testing code</p>
-
 After doing Drupal 8 sites and module pretty much exclusively over the past few years, I decided to try something new and redo my personal website using Gatsby. At first I was planning to use Gatsby as the front end only and still use Drupal 8 to drive the backend CMS functionality, but ultimately I decided to go with a pure Gatsby build utilizing simple markdown files for both pages and posts. There were many factors that went into this decision, but the main reason was that it just wasn't necessary for what I needed. Adding a database and backend adds a significant amount of overhead to any project and as someone who spends all day in terminal windows and text editors, writing content in vscode actually ended up being more comfortable for me than using a traditional web content interface.
 
 ## Why Not Use Drupal?
