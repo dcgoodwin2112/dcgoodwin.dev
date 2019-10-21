@@ -4,7 +4,7 @@ module.exports = {
     description: `Dan Goodwin - Web Application Developer. Drupal, PHP, JavaScript, React, Gatsby`,
     author: `@dcgoodwin2112`,
     headerTagLine: `Web Application Developer`,
-    headerIcon: `src/images/dan-goodwin-headshot.png`,
+    headerIcon: `src/images/dan-goodwin-headshot-512.png`,
     socialLinks: {
       twitter: `https://twitter.com/dcgoodwin2112`,
       linkedin: `https://www.linkedin.com/in/dcgoodwin2112/`,
@@ -13,6 +13,7 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-eslint`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -35,19 +36,31 @@ module.exports = {
         path: `${__dirname}/src/pages-markdown`,
       },
     },
-    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 776,
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `dcgoodwin-dev-site`,
+        short_name: `dcgoodwin`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/dan-goodwin-headshot-512.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
