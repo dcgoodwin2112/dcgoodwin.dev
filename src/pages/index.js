@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/posts/" } }
+      filter: { fileAbsolutePath: { regex: "/posts-markdown/" } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
@@ -18,6 +18,7 @@ export const pageQuery = graphql`
           excerpt(pruneLength: 250)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
+            dateTime: date(formatString: "YYYY-MM-DD")
             path
             title
             featuredImage {
@@ -70,7 +71,7 @@ const Post = ({ edge: { node } }) => (
           (node.frontmatter.featuredImage ? "" : " flex-basis-full-width")
         }
       >
-        <div className="post-date">{node.frontmatter.date}</div>
+        <div className="post-date"><time dateTime={node.frontmatter.dateTime}>{node.frontmatter.date}</time></div>
         <p>
           {node.excerpt} [<Link to={node.frontmatter.path}>Read More</Link>]
         </p>
