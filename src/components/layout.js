@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
           }
         }
       }
-      headerIcon: file(relativePath: { eq: "dan-goodwin-headshot.png" }) {
+      headerIcon: file(relativePath: { eq: "dan-goodwin-headshot-512.png" }) {
         childImageSharp {
           fixed(width: 84) {
             ...GatsbyImageSharpFixed
