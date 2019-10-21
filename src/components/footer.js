@@ -15,14 +15,26 @@ const Footer = ({ socialLinks, certifiedDevBadge, drupalAssocBadge }) => {
           </ul>
         </div>
         <div className="footer-badges">
-          <Img
-            fixed={certifiedDevBadge.childImageSharp.fixed}
-            alt="Acquia Certified Developer Drupal 8 Badge Icon"
-          />
-          <Img
-            fixed={drupalAssocBadge.childImageSharp.fixed}
-            alt="Drupal Association Individual Member Badge"
-          />
+          <a
+            href="https://certification.acquia.com/registry?fname=Daniel&lname=Goodwin&city=&state=North+Carolina&country=&org=&exam=All"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Img
+              fixed={certifiedDevBadge.childImageSharp.fixed}
+              alt="Acquia Certified Developer Drupal 8 Badge Icon"
+            />
+          </a>
+          <a
+            href="https://www.drupal.org/association"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Img
+              fixed={drupalAssocBadge.childImageSharp.fixed}
+              alt="Drupal Association Individual Member Badge"
+            />
+          </a>
         </div>
         <div className="footer-copyright">
           © {new Date().getFullYear()}, Built with
