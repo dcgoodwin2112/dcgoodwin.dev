@@ -11,7 +11,9 @@ const Post = ({ data }) => {
       <div className="blog-post-container">
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
+          <div class="post-date">
+            <time datetime={frontmatter.dateTime}>{frontmatter.date}</time>
+          </div>
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
@@ -28,6 +30,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
+        dateTime: date(formatString: "YYYY-MM-DD")
         path
         title
       }
