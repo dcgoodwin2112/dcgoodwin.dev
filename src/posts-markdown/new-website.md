@@ -1,7 +1,8 @@
 ---
 path: /posts/new-gatsby-website
-date: '2019-10-20T04:00:00.000Z'
+date: '2019-10-20'
 title: New Gatsby Website
+tags: ["Gatsby", "React", "JavaScript", "Drupal"]
 featuredImage: ../images/posts/gatsby-vscode-screenshot-front.png
 ---
 ![Screenshot of vscode editor with components and graphql query](gatsby-site-vscode-full.png)
