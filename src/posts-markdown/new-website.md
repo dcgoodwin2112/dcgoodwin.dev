@@ -1,6 +1,6 @@
 ---
 path: /posts/new-gatsby-website
-date: 2019-10-15T04:00:00.000Z
+date: 2019-10-05T04:00:00.000Z
 title: New Gatsby Website
 featuredImage: ../images/posts/gatsby-vscode-screenshot-front.png
 ---
