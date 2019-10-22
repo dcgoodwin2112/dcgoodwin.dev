@@ -32,7 +32,8 @@ main {
   max-width: 776px;
 }
 
-main a, main a:visited {
+main a,
+main a:visited {
   color: var(--theme-blue);
 }
 
@@ -56,15 +57,27 @@ main a:hover {
 }
 
 .flex-basis-full-width {
-  flex-basis: 100%
+  flex-basis: 100%;
 }
 
 .featured-image {
   max-width: 250px;
 }
 
-.post-date {
+.post-date,
+.post-tags {
   margin-bottom: 1.45rem;
+}
+
+.post-tags span {
+  margin-right: 1rem;
+  padding: 0.45rem;
+  border-radius: 2px;
+  border: none;
+  background-color: var(--theme-light-grey);
+  font-size: 0.8rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 @media only screen and (max-width: 900px) {
@@ -81,4 +94,3 @@ main a:hover {
     flex-basis: 100%;
   }
 }
-
