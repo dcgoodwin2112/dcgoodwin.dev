@@ -15,21 +15,13 @@ const Footer = ({ socialLinks, certifiedDevBadge, drupalAssocBadge }) => {
           </ul>
         </div>
         <div className="footer-badges">
-          <a
-            href="https://certification.acquia.com/registry?fname=Daniel&lname=Goodwin&city=&state=North+Carolina&country=&org=&exam=All"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://certification.acquia.com/registry?fname=Daniel&lname=Goodwin&city=&state=North+Carolina&country=&org=&exam=All">
             <Img
               fixed={certifiedDevBadge.childImageSharp.fixed}
               alt="Acquia Certified Developer Drupal 8 Badge Icon"
             />
           </a>
-          <a
-            href="https://www.drupal.org/association"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.drupal.org/association">
             <Img
               fixed={drupalAssocBadge.childImageSharp.fixed}
               alt="Drupal Association Individual Member Badge"
@@ -39,13 +31,7 @@ const Footer = ({ socialLinks, certifiedDevBadge, drupalAssocBadge }) => {
         <div className="footer-copyright">
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a
-            href="https://www.gatsbyjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Gatsby
-          </a>
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
         </div>
       </div>
     </footer>
@@ -56,9 +42,7 @@ const SocialLink = ({ href, linkText }) => {
   return (
     <>
       <li>
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          {linkText}
-        </a>
+        <a href={href}>{linkText}</a>
       </li>
     </>
   )
