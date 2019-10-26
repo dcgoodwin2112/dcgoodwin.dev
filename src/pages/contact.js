@@ -18,8 +18,7 @@ const Contact = ({ data }) => {
   }
 
   const handleSubmit = e => {
-    e.preventDefault()
-    setConfirm("testing")
+    // TODO.
   }
 
   return (
