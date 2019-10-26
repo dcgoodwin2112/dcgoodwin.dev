@@ -37,12 +37,13 @@ module.exports = {
       },
     },
     {
-     resolve: 'gatsby-plugin-tinacms',
+      resolve: "gatsby-plugin-tinacms",
       options: {
-        plugins: [
-          "gatsby-tinacms-git",
-          "gatsby-tinacms-remark",
-        ],
+        plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
+        sidebar: {
+          hidden: process.env.NODE_ENV === "production",
+          position: "fixed",
+        },
       },
     },
     `gatsby-transformer-sharp`,
