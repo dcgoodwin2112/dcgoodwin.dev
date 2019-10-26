@@ -18,7 +18,7 @@ const Contact = ({ data }) => {
   }
 
   const handleSubmit = e => {
-    // TODO.
+    // TODO. Maybe?
   }
 
   return (
@@ -40,6 +40,7 @@ const Contact = ({ data }) => {
           netlify-honeypot="last-name"
           onSubmit={handleSubmit}
         >
+          <input type="hidden" name="contact" value="contact" />
           <label>
             Subject:
             <br />
