@@ -26,43 +26,46 @@ const Contact = ({ data }) => {
     <Layout>
       <SEO title="Contact" />
       <h1>{frontmatter.title}</h1>
-      <div
-        className="contact-page"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
       {confirm !== "" && <div className="confirm-message">{confirm}</div>}
-      <form
-        name="contact"
-        className="contact-form"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="name-other"
-        onSubmit={handleSubmit}
-      >
-        <label>
-          Subject:
-          <br />
-          <input
-            type="text"
-            name="subject"
-            value={values.subject}
-            onChange={handleChange}
-          />
-        </label>
-        <label style={{ display: "none" }}>
-          Name: <input name="name-other" />
-        </label>
-        <label>
-          Message:
-          <br />
-          <textarea
-            name="message"
-            value={values.message}
-            onChange={handleChange}
-          />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div className="contact-form-container">
+        <div
+          className="contact-page"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+
+        <form
+          name="contact"
+          className="contact-form"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="lastname"
+          onSubmit={handleSubmit}
+        >
+          <label>
+            Subject:
+            <br />
+            <input
+              type="text"
+              name="subject"
+              value={values.subject}
+              onChange={handleChange}
+            />
+          </label>
+          <label style={{ display: "none" }}>
+            Name: <input name="name-other" />
+          </label>
+          <label>
+            Message:
+            <br />
+            <textarea
+              name="message"
+              value={values.message}
+              onChange={handleChange}
+            />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     </Layout>
   )
 }

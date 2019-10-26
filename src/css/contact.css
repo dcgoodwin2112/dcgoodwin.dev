@@ -1,3 +1,19 @@
+.contact-form-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+
+.contact-form-container div {
+  flex-basis: 50%;
+  padding-left: 2rem;
+  margin-top: 1rem;
+}
+
+.contact-form-container form {
+  flex-basis: 50%;
+}
+
 form {
   display: block;
   margin: 0 auto;
@@ -44,4 +60,20 @@ input[type="submit"]:hover {
   cursor: pointer;
   background-color: var(--theme-dark-grey);
   transition: background-color 0.5s;
+}
+
+@media only screen and (max-width: 700px) {
+  .contact-form-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .contact-form-container div,
+  .contact-form-container form {
+    flex-basis: 100%;
+  }
+
+  .contact-form-container div {
+    padding-left: 0;
+  }
 }
