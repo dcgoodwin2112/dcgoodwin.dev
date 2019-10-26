@@ -38,7 +38,7 @@ const Contact = ({ data }) => {
           className="contact-form"
           method="POST"
           data-netlify="true"
-          netlify-honeypot="lastname"
+          netlify-honeypot="last-name"
           onSubmit={handleSubmit}
         >
           <label>
@@ -52,7 +52,7 @@ const Contact = ({ data }) => {
             />
           </label>
           <label style={{ display: "none" }}>
-            Name: <input name="name-other" />
+            Name: <input name="last-name" />
           </label>
           <label>
             Message:
