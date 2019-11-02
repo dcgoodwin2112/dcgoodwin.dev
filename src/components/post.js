@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { remarkForm } from "gatsby-tinacms-remark"
 import PropTypes from "prop-types"
 import Layout from "./layout"
+import SEO from "./seo"
 
 const Post = ({ data }) => {
   const { markdownRemark } = data
@@ -13,6 +14,7 @@ const Post = ({ data }) => {
   console.log(tags);
   return (
     <Layout>
+      <SEO title={frontmatter.title} />
       <div className="blog-post-container">
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
