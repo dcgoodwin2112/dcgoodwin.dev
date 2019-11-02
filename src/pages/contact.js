@@ -10,22 +10,16 @@ const Contact = ({ data }) => {
   const { frontmatter, html } = markdownRemark
   const defaultValues = { subject: "", message: "" }
   const [values, setValues] = useState(defaultValues)
-  const [confirm, setConfirm] = useState("")
 
   const handleChange = e => {
     const { name, value } = e.target
     setValues({ ...values, [name]: value })
   }
 
-  const handleSubmit = e => {
-    // TODO. Maybe?
-  }
-
   return (
     <Layout>
       <SEO title="Contact" />
       <h1>{frontmatter.title}</h1>
-      {confirm !== "" && <div className="confirm-message">{confirm}</div>}
       <div className="contact-form-container">
         <div
           className="contact-page"
@@ -38,7 +32,6 @@ const Contact = ({ data }) => {
           method="POST"
           data-netlify="true"
           netlify-honeypot="last-name"
-          onSubmit={handleSubmit}
         >
           <input type="hidden" name="contact" value="contact" />
           <label>
