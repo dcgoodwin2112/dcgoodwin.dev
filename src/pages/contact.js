@@ -29,11 +29,11 @@ const Contact = ({ data }) => {
         <form
           name="contact"
           className="contact-form"
-          method="POST"
+          method="post"
           data-netlify="true"
-          netlify-honeypot="last-name"
+          data-netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="contact" value="contact" />
+          <input type="hidden" name="bot-field" />
           <label>
             Subject:
             <br />
@@ -43,9 +43,6 @@ const Contact = ({ data }) => {
               value={values.subject}
               onChange={handleChange}
             />
-          </label>
-          <label style={{ display: "none" }}>
-            Name: <input name="last-name" />
           </label>
           <label>
             Message:
