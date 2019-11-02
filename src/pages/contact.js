@@ -27,6 +27,7 @@ const Contact = ({ data }) => {
         />
 
         <form
+          action="/success"
           name="contact"
           className="contact-form"
           method="post"
