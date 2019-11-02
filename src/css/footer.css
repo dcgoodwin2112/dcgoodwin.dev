@@ -74,3 +74,10 @@
     margin: 0.5rem;
   }
 }
+
+@media only screen and (max-width: 420px) {
+  .footer-social-links li {
+   display: block;
+   border-right: none;
+  }
+}
