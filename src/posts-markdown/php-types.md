@@ -14,7 +14,7 @@ PHP doesn't quite have the hype around it that JavaScript and related front-end 
 
 ### Type Hinting
 
-The first and more widely used method is called type hinting. Type hinting has been in PHP for a long time, but it has been gradually improved upon over the years. In its first iteration back in 5.0, only class and interface names could be used as a type hint, but support was later added for arrays and primitives. A generic object type hint was added in 7.2 which really comes in handy when a parameter can be multiple types or if you're working with stdClass objects.
+The first and more widely used method is called type hinting. Type hinting has been in PHP for a long time, but it has been gradually improved upon over the years. In its first iteration back in PHP version 5.0, only class and interface names could be used as a type hint, but support was later added for arrays and primitives. A generic object type hint was added in 7.2 which really comes in handy when a parameter can be multiple types or if you're working with stdClass objects.
 
 To define a type hint, you simply add the name of the class or primitive before a parameter name in a function definition.
 
