@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { remarkForm } from "gatsby-tinacms-remark"
 import PropTypes from "prop-types"
+import Img from "gatsby-image"
 import Layout from "./layout"
 import SEO from "./seo"
 
@@ -24,6 +25,11 @@ const Post = ({ data }) => {
           <div className="post-tags">
             {tags}
           </div>
+          {frontmatter.heroImage &&
+          <div className="hero-image">
+            <Img fluid={frontmatter.heroImage.childImageSharp.fluid}/>
+          </div>
+          }
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
@@ -42,6 +48,14 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         dateTime: date(formatString: "YYYY-MM-DD")
+        heroImage {
+          childImageSharp {
+            fluid(maxWidth: 776) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        heroImageAlt
         path
         tags
         title
