@@ -6,9 +6,11 @@ tags:
   - Gatsby
   - React
   - Drupal
-featuredImage: ../images/posts/gatsby-vscode-screenshot-front.png
+featuredImage: '../images/posts/gatsby-vscode-screenshot-front.png'
+featuredImageAlt: 'Screenshot of code'
+heroImage: '../images/posts/gatsby-site-vscode-full.png'
+heroImageAlt: 'Screenshot of vscode editor with components and graphql query'
 ---
-![Screenshot of vscode editor with components and graphql query](gatsby-site-vscode-full.png)
 
 After primarily focusing on Drupal 8 sites and modules over the past few years, I decided it was time to try something new and redo my personal website using Gatsby. At first I was planning to use Gatsby as the front end only and still use Drupal 8 to drive the back end CMS functionality, but ultimately I decided to go with a pure Gatsby build utilizing simple markdown files for both pages and posts. There were many factors that went into this decision, but the main reason was that it just wasn't necessary for what I needed. Adding a database and back end adds a significant amount of overhead to any project and as someone who spends all day in terminal windows and text editors, writing content in vscode actually ended up being more comfortable for me than using a traditional web content interface.
 
