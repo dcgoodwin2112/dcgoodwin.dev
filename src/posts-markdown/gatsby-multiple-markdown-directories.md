@@ -35,4 +35,14 @@ When writing GraphQL queries to pull data from markdown files, errors can occur 
   `)
 ```
 
+Check out the Gatsby documentation for more information on using markdown as a data source for Gatsby.
+
+[Adding Markdown Pages](https://www.gatsbyjs.org/docs/adding-markdown-pages/)
+
+[Gatsby Transformer Remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/)
+
+
+
+
+
 
