@@ -35,7 +35,7 @@ If the function above is called and a parameter does not match the defined type 
 
 A second and less known type feature of PHP is strict types. Unlike type hinting which is available by default, strict types must be manually turned on for each PHP script where type checking is needed. At the top of the PHP file, add the line declare(strict_types = 1);. This will turn on strict types and allow for type checking of a function's return value.
 
-To add a return type check, add a colon after the closing paren on a function definition that matches the expected return type of the function. PHP will now throw an error if the function returns a value that does not match the returned type.
+To add a return type check, add a colon after the closing paren on a function definition that matches the expected return type of the function. PHP will now throw an error if the function returns a value that does not match the declared returned type.
 
 ```PHP
 <?php
