@@ -97,3 +97,12 @@ main a:hover {
     flex-basis: 100%;
   }
 }
+
+@media only screen and (max-width: 369px) {
+    main {
+    margin: 1.5rem 1rem;
+  }
+  .post-tags span {
+    margin-right: 0.75rem;
+  }
+}

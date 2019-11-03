@@ -10,9 +10,11 @@ const Post = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   const tags = Object.values(frontmatter.tags).map(tag => (
-    <span className={`tag tag-${tag.toLowerCase()}`} key={tag}>{tag}</span>
-  ));
-  console.log(tags);
+    <span className={`tag tag-${tag.toLowerCase()}`} key={tag}>
+      {tag}
+    </span>
+  ))
+  console.log(tags)
   return (
     <Layout>
       <SEO title={frontmatter.title} />
@@ -22,14 +24,12 @@ const Post = ({ data }) => {
           <div className="post-date">
             <time datetime={frontmatter.dateTime}>{frontmatter.date}</time>
           </div>
-          <div className="post-tags">
-            {tags}
-          </div>
-          {frontmatter.heroImage &&
-          <div className="hero-image">
-            <Img fluid={frontmatter.heroImage.childImageSharp.fluid}/>
-          </div>
-          }
+          <div className="post-tags">{tags}</div>
+          {frontmatter.heroImage && (
+            <div className="hero-image">
+              <Img fluid={frontmatter.heroImage.childImageSharp.fluid} alt={frontmatter.heroImageAlt} />
+            </div>
+          )}
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}

@@ -28,6 +28,7 @@ export const pageQuery = graphql`
                 }
               }
             }
+            featuredImageAlt
           }
         }
       }
@@ -62,7 +63,7 @@ const Post = ({ edge: { node } }) => (
     <div className="post-summary-flex-container">
       {node.frontmatter.featuredImage && (
         <div className="featured-image">
-          <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
+          <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} alt={node.frontmatter.featuredImageAlt} />
         </div>
       )}
       <div
