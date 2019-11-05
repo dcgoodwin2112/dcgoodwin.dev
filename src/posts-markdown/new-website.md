@@ -7,7 +7,7 @@ tags:
   - React
   - Drupal
 featuredImage: '../images/posts/gatsby-vscode-screenshot-front.png'
-featuredImageAlt: 'Screenshot of code'
+featuredImageAlt: 'Screenshot of vscode'
 heroImage: '../images/posts/gatsby-site-vscode-full.png'
 heroImageAlt: 'Screenshot of vscode editor with components and graphql query'
 ---
