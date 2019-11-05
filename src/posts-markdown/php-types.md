@@ -29,13 +29,15 @@ To define a type hint, you simply add the name of the class or primitive before 
   }
 ```
 
-If the function above is called and a parameter does not match the defined type hint, then PHP will throw an error. This may seem like a drawback at first, but this is actually extremely helpful for catching errors early and avoiding unexpected behavior in applications.
+If the function above is called and a parameter does not match the defined type hint, then PHP will attempt to convert the given value to the correct type. If that conversion fails, then it will throw an error. This may seem like a drawback at first, but this is actually extremely helpful for catching errors early and avoiding unexpected behavior in applications.
 
-### Declare Strict Types and Return Types
+### Declare Strict Types
 
-A second and less known type feature of PHP is strict types. Unlike type hinting which is available by default, strict types must be manually turned on for each PHP script where type checking is needed. At the top of the PHP file, add the line declare(strict_types = 1);. This will turn on strict types for all functions in the current script.
+A second and less known type feature of PHP is strict types. Unlike type hinting which is available by default, strict types must be manually turned on for each PHP script where type checking is needed. At the top of the PHP file, add the line declare(strict_types = 1);. This will turn on strict types for all functions in the current script. This will tell PHP not to attempt to convert a mismatched type parameter to the correct type and will instead throw an error if the expected type does not match exactly.
 
-With strict types enabled, we can now take advantage of declaring a return type for functions. To accomplish this, add a colon followed by the type name after the closing paren in the function definition.  PHP will now throw an error if the function returns a value that does not match the declared return type. Note that it is possible to declare a return type without strict types enabled, but instead of throwing an error on a type mismatch, PHP will attempt to cast the mismatched variable to the declared type which can cause some unexpected behavior.
+### Return Types
+
+Another new addition to PHP 7 is the ability to declare a return type. This works very similar to type hinting, but instead of coming before a parameter in a function definition, the return type comes after the closing paren of the function and is preceded by a colon. Strict types also affect the declared return type. If strict types is declared then PHP will not attempt to convert the returned value of the function to the expected type and will always throw an error in the event of a mismatched type. The example below both declares strict types and uses a return type.
 
 ```PHP
 <?php
