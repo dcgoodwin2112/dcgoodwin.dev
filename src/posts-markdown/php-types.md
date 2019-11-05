@@ -31,18 +31,18 @@ To define a type hint, you simply add the name of the class or primitive before 
 
 If the function above is called and a parameter does not match the defined type hint, then PHP will throw an error. This may seem like a drawback at first, but this is actually extremely helpful for catching errors early and avoiding unexpected behavior in applications.
 
-### Declare Strict Types
+### Declare Strict Types and Return Types
 
-A second and less known type feature of PHP is strict types. Unlike type hinting which is available by default, strict types must be manually turned on for each PHP script where type checking is needed. At the top of the PHP file, add the line declare(strict_types = 1);. This will turn on strict types and allow for type checking of a function's return value.
+A second and less known type feature of PHP is strict types. Unlike type hinting which is available by default, strict types must be manually turned on for each PHP script where type checking is needed. At the top of the PHP file, add the line declare(strict_types = 1);. This will turn on strict types for all functions in the current script.
 
-To add a return type check, add a colon after the closing paren on a function definition that matches the expected return type of the function. PHP will now throw an error if the function returns a value that does not match the declared returned type.
+With strict types enabled, we can now take advantage of declaring a return type for functions. To accomplish this, add a colon followed by the type name after the closing paren in the function definition.  PHP will now throw an error if the function returns a value that does not match the declared return type. Note that it is possible to declare a return type without strict types enabled, but instead of throwing an error on a type mismatch, PHP will attempt to cast the mismatched variable to the declared type which can cause some unexpected behavior.
 
 ```PHP
 <?php
 declare(strict_types = 1);
 
 /**
- * The 'int' before the opening bracket is a static return type.
+ * The 'int' before the opening bracket is the return type.
  */
 function doubleInt(int $input) : int {
   return $input * 2;
